@@ -7,7 +7,7 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
-    storage.count = value;
+    storage[count] = value;
     count++;
   };
 
@@ -15,9 +15,9 @@ var Stack = function() {
     if (count === 0) {
       return undefined;
     } else {
-      var poppedValue = storage.count;
       count--;
-      return poppedValue;
+      var poppedValue = storage.count;
+      return storage[count];
     }
   };
 

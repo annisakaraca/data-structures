@@ -10,10 +10,12 @@ var Tree = function(value) {
 
 var treeMethods = {};
 
+//O(1)
 treeMethods.addChild = function(value) {
   this.children.push(Tree(value));
 };
 
+//O(n)
 treeMethods.contains = function(target) {
   if (this.value === target) {
     return true;
@@ -22,8 +24,6 @@ treeMethods.contains = function(target) {
       var result = this.children[i].contains(target);
       if (result) {
         return true;
-      } else {
-        continue;
       }
     }
   } 

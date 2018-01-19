@@ -15,16 +15,19 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  var item = false;
   if (this.value === target) {
-    item = true;
-    return;
+    return true;
   } else if (this.children.length > 0) {
     for (var i = 0; i < this.children.length; i++) {
-      return this.children[i].contains(target);
+      var result = this.children[i].contains(target);
+      if (result) {
+        return true;
+      } else {
+        continue;
+      }
     }
-  }
-  return item;
+  } 
+  return false;
 };
 
 
